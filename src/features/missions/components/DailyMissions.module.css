@@ -1,0 +1,42 @@
+.form {
+  display: flex;
+
+  gap: 12px;
+
+  margin-bottom: 20px;
+}
+
+.input {
+  flex: 1;
+
+  background: #1a1627;
+
+  border: 3px solid var(--pink);
+
+  border-radius: 12px;
+
+  padding: 12px;
+
+  color: var(--cream);
+
+  font-size: 1rem;
+}
+
+.button {
+  background: var(--pink);
+
+  border: none;
+
+  padding: 12px 18px;
+
+  border-radius: 12px;
+
+  cursor: pointer;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+}
