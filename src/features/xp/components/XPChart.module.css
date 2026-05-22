@@ -36,3 +36,7 @@
 
   font-size: 0.9rem;
 }
+
+.chart {
+  overflow-x: auto;
+}

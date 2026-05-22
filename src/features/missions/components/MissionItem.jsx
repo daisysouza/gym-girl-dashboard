@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 export default function MissionItem({ mission, toggleMission, deleteMission }) {
   return (
     <div onClick={() => toggleMission(mission.id)}>
@@ -14,4 +16,6 @@ export default function MissionItem({ mission, toggleMission, deleteMission }) {
       </button>
     </div>
   );
+
+  export default memo(MissionItem);
 }

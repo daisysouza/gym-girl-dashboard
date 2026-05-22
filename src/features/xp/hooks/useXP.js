@@ -19,4 +19,8 @@ export function useXP() {
     xp,
     updateXP,
   };
+
+  const totalXP = useMemo(() => {
+    return missions.filter((m) => m.done).length * 100;
+  }, [missions]);
 }

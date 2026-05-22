@@ -87,3 +87,14 @@
 
   color: white;
 }
+
+.card {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    text-align: center;
+  }
+}

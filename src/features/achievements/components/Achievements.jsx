@@ -1,42 +1,28 @@
+import { memo } from 'react';
+
 import styles from './Achievements.module.css';
 
-export default function Achievements() {
+function Achievements() {
   const achievements = [
-    {
-      id: 1,
-      icon: '🏆',
-      title: 'First Steps',
-    },
-    {
-      id: 2,
-      icon: '⚡',
-      title: 'XP Hunter',
-    },
-    {
-      id: 3,
-      icon: '🕯️',
-      title: 'Consistency Queen',
-    },
-    {
-      id: 4,
-      icon: '🌙',
-      title: 'Moon Warrior',
-    },
+    '🏆 First Steps',
+    '⚡ XP Hunter',
+    '🕯️ Consistency Queen',
+    '🌙 Moon Warrior',
   ];
 
   return (
-    <section>
+    <section className={styles.card}>
       <h2>Achievements</h2>
 
       <div className={styles.grid}>
-        {achievements.map((item) => (
-          <div key={item.id} className={styles.item}>
-            <div>{item.icon}</div>
-
-            <span>{item.title}</span>
+        {achievements.map((achievement) => (
+          <div key={achievement} className={styles.item}>
+            {achievement}
           </div>
         ))}
       </div>
     </section>
   );
 }
+
+export default memo(Achievements);

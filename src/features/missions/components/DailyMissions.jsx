@@ -1,19 +1,20 @@
-import styles from './DailyMissions.module.css';
-
-import MissionItem from './MissionItem';
+import { memo } from 'react';
 
 import MissionInput from './MissionInput';
+import MissionItem from './MissionItem';
 
-export default function DailyMissions({
+import styles from './DailyMissions.module.css';
+
+function DailyMissions({
   missions,
   toggleMission,
-  deleteMission,
   newMission,
   setNewMission,
   addMission,
+  deleteMission,
 }) {
   return (
-    <section>
+    <section className={styles.card}>
       <h2>Daily Missions 💖</h2>
 
       <MissionInput
@@ -35,3 +36,5 @@ export default function DailyMissions({
     </section>
   );
 }
+
+export default memo(DailyMissions);

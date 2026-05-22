@@ -1,3 +1,9 @@
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
 .form {
   display: flex;
 
@@ -34,9 +40,12 @@
   cursor: pointer;
 }
 
-.list {
-  display: flex;
-  flex-direction: column;
+.dashboardGrid {
+  display: grid;
 
-  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+  gap: 24px;
+
+  align-items: start;
 }

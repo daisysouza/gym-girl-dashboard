@@ -18,4 +18,6 @@ export default function ThemeSwitcher() {
       </div>
     </section>
   );
+
+  export default memo(ThemeSwitcher);
 }

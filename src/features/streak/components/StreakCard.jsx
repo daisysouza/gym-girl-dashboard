@@ -14,4 +14,5 @@ export default function StreakCard({ streak, increaseStreak }) {
       </button>
     </section>
   );
+  export default memo(StreakCard);
 }

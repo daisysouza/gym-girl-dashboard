@@ -1,30 +1,33 @@
-import { Card } from '../../../shared/components/Card';
+import { memo } from 'react';
 
 import styles from './XPChart.module.css';
 
-export default function XPChart() {
-  const data = [40, 60, 80, 55, 90];
-
+function XPChart() {
   return (
-    <Card variant="pink">
-      <div className={styles.header}>
-        <h2>XP Progress 📈</h2>
-      </div>
+    <section className={styles.card}>
+      <h2>XP Progress 📈</h2>
 
       <div className={styles.chart}>
-        {data.map((value, index) => (
-          <div key={index} className={styles.column}>
-            <div
-              className={styles.fill}
-              style={{
-                height: `${value}%`,
-              }}
-            />
+        <div className={styles.column}>
+          <div className={styles.bar} style={{ height: '40%' }} />
 
-            <span>Day {index + 1}</span>
-          </div>
-        ))}
+          <span>Mon</span>
+        </div>
+
+        <div className={styles.column}>
+          <div className={styles.bar} style={{ height: '65%' }} />
+
+          <span>Tue</span>
+        </div>
+
+        <div className={styles.column}>
+          <div className={styles.bar} style={{ height: '80%' }} />
+
+          <span>Wed</span>
+        </div>
       </div>
-    </Card>
+    </section>
   );
 }
+
+export default memo(XPChart);

@@ -1,24 +1,25 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from 'react';
 
-import { load, save } from "../../../shared/services/localStorage.service";
-import { STORAGE_KEYS } from "../../../shared/constants/storageKeys";
+import { load, save } from '../../../shared/services/localStorage.service';
+
+import { STORAGE_KEYS } from '../../../shared/constants/storageKeys';
 
 const initialMissions = [
   {
     id: 1,
-    title: "Drink 2L water 🧪",
+    title: 'Drink 2L water 🧪',
     done: false,
   },
 
   {
     id: 2,
-    title: "Stretch for 10 min 🌙",
+    title: 'Stretch for 10 min 🌙',
     done: false,
   },
 
   {
     id: 3,
-    title: "Healthy meal 🍓",
+    title: 'Healthy meal 🍓',
     done: false,
   },
 ];
@@ -28,13 +29,13 @@ export function useMissions() {
     load(STORAGE_KEYS.MISSIONS, initialMissions)
   );
 
-  const [newMission, setNewMission] = useState("");
+  const [newMission, setNewMission] = useState('');
 
   useEffect(() => {
     save(STORAGE_KEYS.MISSIONS, missions);
   }, [missions]);
 
-  function addMission() {
+  const addMission = useCallback(() => {
     if (!newMission.trim()) return;
 
     const mission = {
@@ -45,10 +46,10 @@ export function useMissions() {
 
     setMissions((prev) => [...prev, mission]);
 
-    setNewMission("");
-  }
+    setNewMission('');
+  }, [newMission]);
 
-  function toggleMission(id) {
+  const toggleMission = useCallback((id) => {
     setMissions((prev) =>
       prev.map((mission) =>
         mission.id === id
@@ -59,13 +60,11 @@ export function useMissions() {
           : mission
       )
     );
-  }
+  }, []);
 
-  function deleteMission(id) {
-    setMissions((prev) =>
-      prev.filter((mission) => mission.id !== id)
-    );
-  }
+  const deleteMission = useCallback((id) => {
+    setMissions((prev) => prev.filter((mission) => mission.id !== id));
+  }, []);
 
   return {
     missions,
