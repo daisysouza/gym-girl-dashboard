@@ -1,21 +1,38 @@
-# Gym Girl Advance Dashboard
+# Gym Girl Advance 💖
 
-Gamified fitness dashboard built with React + Vite.
-
-Inspired by cozy games.
+Gamified fitness dashboard inspired by cozy games and RPG systems.
 
 ## Features
 
-- Daily missions
 - XP system
-- Streak tracker
+- Daily missions
+- Achievement system
+- Streak tracking
 - Theme switcher
-- LocalStorage persistence
-- Responsive UI
+- Local persistence
+- Responsive layout
+- Feature-based architecture
 
-## Stack
+## Tech Stack
 
 - React
 - Vite
-- CSS Architecture
-- Feature-based structure
+- CSS Modules
+- LocalStorage
+- Feature-Based Architecture
+
+## Architecture
+
+src/
+features/
+shared/
+pages/
+
+## Live Demo
+
+[Open Project](https://gym-girl-dashboard.vercel.app/)
+
+## Installation
+
+npm install
+npm run dev
